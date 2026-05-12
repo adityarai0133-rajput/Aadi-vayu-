@@ -26,7 +26,7 @@ jobs:
 
     - name: 4. Compiling Aadi-Vayu to EXE
       run: |
-        pyinstaller --onefile --console --name Aadi-Vayu-v1 weather_vault.py
+        pyinstaller --onefile --console --name Aadi-Vayu-v1 weather_vayu.py
 
     - name: 5. Archiving Executable (Artifact)
       uses: actions/upload-artifact@v4
