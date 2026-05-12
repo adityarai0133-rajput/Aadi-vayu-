@@ -1,0 +1,36 @@
+name: KYXGO Aadi-Vayu Build Engine
+
+# Ye action tab chalega jab tu code push karega
+on: 
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: # Taaki tu khud bhi button daba kar chala sake
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: 1. Fetching Source Code
+      uses: actions/checkout@v4
+
+    - name: 2. Setting up Python Runtime
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: 3. Installing KYXGO Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests pyinstaller
+
+    - name: 4. Compiling Aadi-Vayu to EXE
+      run: |
+        pyinstaller --onefile --console --name Aadi-Vayu-v1 weather_vault.py
+
+    - name: 5. Archiving Executable (Artifact)
+      uses: actions/upload-artifact@v4
+      with:
+        name: Aadi-Vayu-Windows-Build
+        path: dist/Aadi-Vayu-v1.exe
+        
