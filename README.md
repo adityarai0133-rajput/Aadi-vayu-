@@ -26,3 +26,5 @@ As climate change intensifies, rural and low-connectivity regions often lack acc
    pip install requests
    python weather_vault.py
    
+developed by Aditya Rai CEO at kyxgo technology 
+All copyright reserved in 2026 by kyxgo technology.
