@@ -3,9 +3,8 @@ name: KYXGO Aadi-Vayu Build Engine
 on: 
   push:
     branches: [ "main" ]
-  push:
     tags:
-      - 'v*' # Jab bhi v1.0 jaisa tag banayega tabhi release hoga
+      - 'v*'
   workflow_dispatch:
 
 jobs:
